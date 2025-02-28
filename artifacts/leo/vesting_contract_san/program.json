@@ -1,0 +1,1 @@
+{"program":"vesting_contract_san.aleo","version":"0.1.0","description":"","license":"MIT","dependencies":[{"name":"token_registry.aleo","location":"network","endpoint":"http://localhost:3030","network":"testnet"}]}
