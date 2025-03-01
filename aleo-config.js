@@ -7,7 +7,7 @@ export default {
   mainnet: {},
   networks: {
     testnet: {
-      endpoint: 'http://localhost:3030',
+      endpoint: 'https://api.explorer.provable.com/v1',
       accounts: [
         process.env.ALEO_PRIVATE_KEY_TESTNET3,
         process.env.ALEO_DEVNET_PRIVATE_KEY2

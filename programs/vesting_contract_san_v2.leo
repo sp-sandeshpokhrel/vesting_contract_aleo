@@ -1,7 +1,7 @@
 import token_registry.aleo;
 
-program vesting_contract_san.aleo {
-    const ADMIN: address = aleo1gxnumv92wz9jqn5awhzv0wer4mwanfnutnvrpcf9frf7m3qp0cpqj9jnrt;
+program vesting_contract_san_v2.aleo {
+    const ADMIN: address = aleo1wfaqpfc57m0wxmr9l6r8a5g95c0cthe54shzmcyu6wf6tqvady9syt27xt;
 
     record AccessRecord {
         owner:address,
@@ -50,7 +50,8 @@ program vesting_contract_san.aleo {
 
     async function finalize_register_token (token_id:field) {
         let token:TokenMetadata = token_registry.aleo/registered_tokens.get(token_id);
-        let registered: bool = registered_token.get(token_id);
+        let registered: bool = registered_token.get_or_use(token_id,false);
+        assert(!registered);
         registered_token.set(token_id,true);
     }
 
